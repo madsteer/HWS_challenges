@@ -22,6 +22,7 @@ class DetailViewController: UIViewController {
 
         if let imageToload = selectedImage {
             imageView.image = UIImage(named: imageToload)
+            imageView.contentMode = .scaleAspectFit
         }
     }
 
