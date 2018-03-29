@@ -22,7 +22,8 @@ class ViewController: UIViewController {
 
         hangManLabel.text = hangManGraphic[0]
 
-        guessLabel.text = "_ _ _ _ _ _"
+//        guessLabel.text = "_ _ _ _ _ _"
+        presentGuess()
 //        for hangMan in hangManGraphic {
 //            hangManLabel.text = hangMan
 
@@ -31,6 +32,16 @@ class ViewController: UIViewController {
 //            view.addSubview(ac.view)
 //            present(ac, animated: true)
 //        }
+    }
+
+    private func presentGuess() {
+        let guessLength: Int = wordToGuess.count
+        var underscores = "_"
+
+        for _ in 1 ..< guessLength {
+            underscores += " _"
+        }
+        guessLabel.text = underscores
     }
 
 }
