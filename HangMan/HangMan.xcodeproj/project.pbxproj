@@ -13,6 +13,7 @@
 		8BAF2C232057753B00C2BE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BAF2C222057753B00C2BE80 /* Assets.xcassets */; };
 		8BAF2C262057753B00C2BE80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BAF2C242057753B00C2BE80 /* LaunchScreen.storyboard */; };
 		8BAF2C2E205778DC00C2BE80 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAF2C2D205778DC00C2BE80 /* Model.swift */; };
+		8BF16E16206C7B10002512B8 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF16E15206C7B10002512B8 /* UILabelExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8BAF2C252057753B00C2BE80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BAF2C272057753B00C2BE80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BAF2C2D205778DC00C2BE80 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		8BF16E15206C7B10002512B8 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				8BAF2C1F2057753B00C2BE80 /* Main.storyboard */,
 				8BAF2C1D2057753B00C2BE80 /* ViewController.swift */,
 				8BAF2C2D205778DC00C2BE80 /* Model.swift */,
+				8BF16E15206C7B10002512B8 /* UILabelExtension.swift */,
 				8BAF2C1B2057753B00C2BE80 /* AppDelegate.swift */,
 				8BAF2C222057753B00C2BE80 /* Assets.xcassets */,
 				8BAF2C242057753B00C2BE80 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BF16E16206C7B10002512B8 /* UILabelExtension.swift in Sources */,
 				8BAF2C2E205778DC00C2BE80 /* Model.swift in Sources */,
 				8BAF2C1E2057753B00C2BE80 /* ViewController.swift in Sources */,
 				8BAF2C1C2057753B00C2BE80 /* AppDelegate.swift in Sources */,
