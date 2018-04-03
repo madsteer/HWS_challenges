@@ -19,28 +19,38 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        presentChallenge()
+    }
+
+    private func presentChallenge() {
+        numberOfBadGuesses = 0
+        guessedLetters = ""
+
         configureLetterButtons()
 
         hangManLabel.text = hangManGraphic[numberOfBadGuesses]
 
-//        guessLabel.text = "_ _ _ _ _ _"
-        presentGuess()
+        var underscores = ""
 
-//        for hangMan in hangManGraphic {
-//            hangManLabel.text = hangMan
-
-//            let ac = UIAlertController(title: "whatevs", message: nil, preferredStyle: .alert)
-//            ac.addAction(UIAlertAction(title: "OK", style: .default))
-//            view.addSubview(ac.view)
-//            present(ac, animated: true)
-//        }
+        for _ in wordToGuess {
+            underscores += "_"
+        }
+        guessLabel.text = underscores
+        guessLabel.addCharacterSpacing()
     }
 
     private func checkForMatching(pressed letter: String) {
         if wordToGuess.contains(letter) {
             var newUnderscores = ""
-            for letterToCheck in wordToGuess {
-                newUnderscores += (String(letterToCheck) == letter) ? letter : "_"
+            guard let currentGuess = guessLabel.text else { return }
+            for index in wordToGuess.indices {
+                if String(wordToGuess[index]) == letter {
+                    newUnderscores += letter
+                } else {
+                    let currentGuessLetter = currentGuess[index]
+                    newUnderscores += currentGuessLetter != "_" ? String(currentGuessLetter) : "_"
+                }
             }
             guessLabel.text = newUnderscores
             guessLabel.addCharacterSpacing()
@@ -50,17 +60,28 @@ class ViewController: UIViewController {
         }
 
         guessedLetters += letter
+
+        if let guessText = guessLabel.text,
+            !guessText.contains("_") {
+            endGame(with: "You Win", and: "Great job Partner!")
+        }
+
+        if numberOfBadGuesses > 6 {
+            endGame(with: "You Lose", and: "Ya done got hanged!")
+        }
     }
 
-    private func presentGuess() {
-//        let guessLength: Int = wordToGuess.count
-        var underscores = ""
+    private func endGame(with title: String, and message: String) {
+        let ac = UIAlertController(title: title, message: message + " Would you like to play again?", preferredStyle: .alert)
+        ac.addAction(okAction())
+        present(ac, animated: true)
+    }
 
-        for _ in wordToGuess {
-            underscores += "_"
+    private func okAction() -> UIAlertAction {
+        let action = UIAlertAction(title: "OK", style: .default) { [unowned self] _ in
+            self.presentChallenge()
         }
-        guessLabel.text = underscores
-        guessLabel.addCharacterSpacing()
+        return action
     }
 
     private func configureLetterButtons() {
