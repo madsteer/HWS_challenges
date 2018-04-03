@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameplayKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var hangManLabel: UILabel!
@@ -14,11 +15,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var guessedLettersLabel: UITextField!
 
     var guessedLetters = "" { didSet { guessedLettersLabel.text = guessedLetters } }
-    var wordToGuess = "RHYTHM"
+    var wordToGuess = "rhythm"
     var numberOfBadGuesses = 0 { didSet { hangManLabel.text = hangManGraphic[numberOfBadGuesses] } }
+    var allWords = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if let startWordsPath = Bundle.main.path(forResource: "web2", ofType: "txt"),
+            let startWords = try? String(contentsOfFile: startWordsPath) {
+            allWords = startWords.components(separatedBy: "\n")
+        } else {
+            allWords = ["rhythm"]
+        }
 
         presentChallenge()
     }
@@ -26,6 +35,8 @@ class ViewController: UIViewController {
     private func presentChallenge() {
         numberOfBadGuesses = 0
         guessedLetters = ""
+        allWords = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: allWords) as! [String]
+        wordToGuess = allWords[0].lowercased()
 
         configureLetterButtons()
 
@@ -92,7 +103,7 @@ class ViewController: UIViewController {
     }
 
     @objc private func letterButtonPressed(button: UIButton) {
-        if let letter = button.titleLabel?.text {
+        if let letter = button.titleLabel?.text?.lowercased() {
             if guessedLetters.contains(letter) { return }
             checkForMatching(pressed: letter)
         }
