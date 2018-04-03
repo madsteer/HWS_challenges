@@ -6,6 +6,7 @@ These are the challenges that go along with the hacking with swift training.
 * [Milestone 1 Challenge](#milestone-1-challenge)
 * [Milestone 2 Challenge](#milestone-2-challenge)
 * [Milestone 3 Challenge](#milestone-3-challenge)
+* [Milestone 4 Challenge](#milestone-4-challenge)
 
 ## Milestone 1 Challenge
 Page 12 of Hacking With Swift Guide Book.
@@ -20,3 +21,7 @@ Create an app that lists various world flags in a table view. When one of them i
 ## Milestone 3 Challenge
 
 Create a simple app that holds a shopping list, allows you to add to the list, and allows you to share it as a string to another app with a share sheet
+
+## Milestone 4 Challenge
+
+Create a hangman game.  It's complete with an ascii art hangman that gets built as you guess incorrectly.  Uses partial Mac dictionary file to get a random word from.
