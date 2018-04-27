@@ -51,5 +51,12 @@ class ViewController: UICollectionViewController {
 
         return cell
     }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
+            vc.selectedImage = pictures[indexPath.item]
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
