@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8BE98F7D208E707A0079CEB5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE98F7C208E707A0079CEB5 /* Default-568h@2x.png */; };
-		8BE98F7F208E74350079CEB5 /* Storm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE98F7E208E74350079CEB5 /* Storm.swift */; };
 		8BE98F81208E74D30079CEB5 /* StormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE98F80208E74D30079CEB5 /* StormCell.swift */; };
 		D8DE19C6203B7ED000F6D9EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DE19C5203B7ED000F6D9EA /* AppDelegate.swift */; };
 		D8DE19C8203B7ED000F6D9EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DE19C7203B7ED000F6D9EA /* ViewController.swift */; };
@@ -20,7 +19,6 @@
 
 /* Begin PBXFileReference section */
 		8BE98F7C208E707A0079CEB5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		8BE98F7E208E74350079CEB5 /* Storm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storm.swift; sourceTree = "<group>"; };
 		8BE98F80208E74D30079CEB5 /* StormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StormCell.swift; sourceTree = "<group>"; };
 		D8DE19C2203B7ED000F6D9EA /* StormViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StormViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8DE19C5203B7ED000F6D9EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 				D8DE19C9203B7ED000F6D9EA /* Main.storyboard */,
 				D8DE19C7203B7ED000F6D9EA /* ViewController.swift */,
 				8BE98F80208E74D30079CEB5 /* StormCell.swift */,
-				8BE98F7E208E74350079CEB5 /* Storm.swift */,
 				D8DE19F2203C8AA000F6D9EA /* DetailViewController.swift */,
 				D8DE19F1203C72A100F6D9EA /* supporting files */,
 			);
@@ -161,7 +158,6 @@
 				8BE98F81208E74D30079CEB5 /* StormCell.swift in Sources */,
 				D8DE19C8203B7ED000F6D9EA /* ViewController.swift in Sources */,
 				D8DE19C6203B7ED000F6D9EA /* AppDelegate.swift in Sources */,
-				8BE98F7F208E74350079CEB5 /* Storm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

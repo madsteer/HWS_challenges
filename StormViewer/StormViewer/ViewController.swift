@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UICollectionViewController {
 
     var pictures = [String]()
-//    var storms = [Storm]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
