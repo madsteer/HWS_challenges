@@ -8,51 +8,48 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class ViewController: UICollectionViewController {
 
     var pictures = [String]()
-    
+//    var storms = [Storm]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Storm Viewer"
-        let fm = FileManager.default
-        let path = Bundle.main.resourcePath!
-        let items = try! fm.contentsOfDirectory(atPath: path)
-        for item in items {
-//            print("item is \(item)")
-            if item.hasPrefix("nssl") {
-                pictures.append(item)
-            }
-        }
-//        print(pictures)
+
+        getPictures()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func getPictures() {
+        pictures.append("nssl0033")
+        pictures.append("nssl0034")
+        pictures.append("nssl0041")
+        pictures.append("nssl0042")
+        pictures.append("nssl0043")
+        pictures.append("nssl0045")
+        pictures.append("nssl0046")
+        pictures.append("nssl0049")
+        pictures.append("nssl0051")
+        pictures.append("nssl0091")
     }
 
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pictures.count
     }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
-        cell.textLabel?.text = pictures[indexPath.row]
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Storm", for: indexPath) as! StormCell
+        cell.name?.text = pictures[indexPath.item]
+
+        cell.imageView?.image = UIImage(named: pictures[indexPath.item])
+        cell.imageView?.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
+        cell.imageView.layer.borderWidth = 2
+        cell.imageView.layer.cornerRadius = 3
+        cell.layer.cornerRadius = 7
+
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 1: try loading the "Detail" view controller and typecasting it to be DetailViewController
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
-            // 2: success! Set its selectedImage property
-            vc.selectedImage = pictures[indexPath.row]
-            // 3: now push it onto the navigation controller
-            navigationController?.pushViewController(vc, animated: true)
-        }
     }
 }
 
